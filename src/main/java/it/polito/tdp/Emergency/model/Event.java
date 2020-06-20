@@ -15,20 +15,15 @@ public class Event implements Comparable<Event>{
 	
 	private LocalTime time ;
 	private EventType type ;
-	private Paziente paziente ;
+	private Paziente paziente;
 	
-
-	/**
-	 * @param time
-	 * @param type
-	 */
 	public Event(LocalTime time, EventType type, Paziente paziente) {
 		super();
 		this.time = time;
 		this.type = type;
 		this.paziente = paziente;
 	}
-	
+
 	public LocalTime getTime() {
 		return time;
 	}
@@ -36,20 +31,13 @@ public class Event implements Comparable<Event>{
 	public EventType getType() {
 		return type;
 	}
-
-	@Override
-	public int compareTo(Event other) {
-		return this.time.compareTo(other.time);
-	}
-
+	
 	public Paziente getPaziente() {
-		return paziente;
-	}
-
+			return paziente;
+		}
 	
 	@Override
-	public String toString() {
-		return "Event ["+time + ", " + type + ", " + paziente + "]";
+	public int compareTo(Event o) {
+		return this.time.compareTo(o.time);
 	}
-
 }
